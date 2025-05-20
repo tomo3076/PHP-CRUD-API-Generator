@@ -1,0 +1,8 @@
+/vendor/
+/config/db.php
+/config/api.php
+/.env
+.DS_Store
+.idea/
+/tests/output/
+/composer.lock

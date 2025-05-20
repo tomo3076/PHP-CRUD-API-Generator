@@ -1,0 +1,10 @@
+{
+  "phpunit": {
+    "bootstrap": "vendor/autoload.php",
+    "testsuites": {
+      "default": {
+        "directory": "tests"
+      }
+    }
+  }
+}

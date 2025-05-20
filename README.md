@@ -143,4 +143,4 @@ MIT
 
 ## 🙌 Credits
 
-Built by [Your Name](https://github.com/yourusername). PRs/issues welcome!
+Built by [Your Name](https://github.com/BitsHost). PRs/issues welcome!

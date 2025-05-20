@@ -3,6 +3,7 @@
   "description": "Automatic, configurable CRUD API generator for MySQL/MariaDB in PHP (with optional authentication)",
   "type": "project",
   "license": "MIT",
+  "minimum-stability": "dev",
    "authors": [
         {
             "name": "Adrian D",

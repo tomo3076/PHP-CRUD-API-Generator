@@ -20,7 +20,7 @@ OpenAPI (Swagger) docs, and zero code generation.
 ## 📦 Installation
 
 ```bash
-composer create-project yourvendor/php-crud-api-generator
+composer create-project bitshost/php-crud-api-generator
 ```
 
 ---

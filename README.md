@@ -6,11 +6,14 @@ OpenAPI (Swagger) docs, and zero code generation.
 
 ---
 
-## 🚀 Features
+## 🚀 ## 🚀 Features
 
 - Auto-discovers tables and columns
 - Full CRUD endpoints for any table
 - Configurable authentication (API Key, Basic Auth, JWT, or none)
+- Advanced query features: filtering, sorting, pagination
+- RBAC: per-table role-based access control
+- Admin panel (minimal)
 - OpenAPI (Swagger) JSON endpoint for instant docs
 - Clean PSR-4 codebase
 - PHPUnit tests and extensible architecture
@@ -110,6 +113,94 @@ curl -u admin:secret "http://localhost/index.php?action=list&table=users"
 
 ---
 
+
+### 🔄 Advanced Query Features (Filtering, Sorting, Pagination)
+
+The `list` action endpoint now supports advanced query parameters:
+
+| Parameter    | Type    | Description                                                                                       |
+|--------------|---------|---------------------------------------------------------------------------------------------------|
+| `filter`     | string  | Filter rows by column values. Format: `filter=col1:value1,col2:value2`. Use `%` for wildcards.    |
+| `sort`       | string  | Sort by columns. Comma-separated. Use `-` prefix for DESC. Example: `sort=-created_at,name`       |
+| `page`       | int     | Page number (1-based). Default: `1`                                                               |
+| `page_size`  | int     | Number of rows per page (max 100). Default: `20`                                                  |
+
+**Examples:**
+
+- `GET /index.php?action=list&table=users&filter=name:Alice`
+- `GET /index.php?action=list&table=users&sort=-created_at,name`
+- `GET /index.php?action=list&table=users&page=2&page_size=10`
+- `GET /index.php?action=list&table=users&filter=email:%gmail.com&sort=name&page=1&page_size=5`
+
+**Response:**
+```json
+{
+  "data": [ ... array of rows ... ],
+  "meta": {
+    "total": 47,
+    "page": 2,
+    "page_size": 10,
+    "pages": 5
+  }
+}
+```
+
+---
+
+### 📝 OpenAPI Path Example
+
+For `/index.php?action=list&table={table}`:
+
+```yaml
+get:
+  summary: List rows in {table} with optional filtering, sorting, and pagination
+  parameters:
+    - name: table
+      in: query
+      required: true
+      schema: { type: string }
+    - name: filter
+      in: query
+      required: false
+      schema: { type: string }
+      description: |
+        Filter rows by column values. Example: filter=name:Alice,email:%gmail.com
+    - name: sort
+      in: query
+      required: false
+      schema: { type: string }
+      description: |
+        Sort by columns. Example: sort=-created_at,name
+    - name: page
+      in: query
+      required: false
+      schema: { type: integer, default: 1 }
+      description: Page number (1-based)
+    - name: page_size
+      in: query
+      required: false
+      schema: { type: integer, default: 20, maximum: 100 }
+      description: Number of rows per page (max 100)
+  responses:
+    '200':
+      description: List of rows with pagination meta
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items: { type: object }
+              meta:
+                type: object
+                properties:
+                  total: { type: integer }
+                  page: { type: integer }
+                  page_size: { type: integer }
+                  pages: { type: integer }
+```
+
 ## 🛡️ Security Notes
 
 - **Enable authentication for any public deployment!**
@@ -128,10 +219,11 @@ curl -u admin:secret "http://localhost/index.php?action=list&table=users"
 
 ## 🗺️ Roadmap
 
-- RESTful route aliases (`/users/1`)
-- OAuth2 provider integration
-- More DB support (Postgres, SQLite)
-- Pagination, filtering, relations
+- Relations / Linked Data (auto-join, populate, or expand related records)
+- API Versioning (when needed)
+- OAuth/SSO (if targeting SaaS/public)
+- More DB support (Postgres, SQLite, etc.)
+- Analytics & promotion endpoints
 
 ---
 

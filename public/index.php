@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// Add this line if admin React is enabled.
+// \App\Cors::sendHeaders();
+
 use App\Database;
 use App\Router;
 use App\Authenticator;

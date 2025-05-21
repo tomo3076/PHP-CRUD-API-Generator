@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use Firebase\JWT\JWT;
@@ -116,5 +117,39 @@ class Authenticator
         http_response_code(401);
         echo json_encode(['error' => 'Unauthorized']);
         exit;
+    }
+
+    // ... existing code ...
+
+    public function getCurrentUser(): ?string
+    {
+        // Basic Auth
+        if ($this->config['auth_method'] === 'basic' && isset($_SERVER['PHP_AUTH_USER'])) {
+            return $_SERVER['PHP_AUTH_USER'];
+        }
+        // JWT
+        if ($this->config['auth_method'] === 'jwt') {
+            $headers = $this->getHeaders();
+            $authHeader = $headers['Authorization'] ?? '';
+            if (preg_match('/Bearer\s(\S+)/', $authHeader, $matches)) {
+                try {
+                    $decoded = \Firebase\JWT\JWT::decode($matches[1], new \Firebase\JWT\Key($this->config['jwt_secret'], 'HS256'));
+                    return $decoded->sub ?? null;
+                } catch (\Exception $e) {
+                }
+            }
+        }
+        // For API key or other methods, you can add user tracking as needed
+        return null;
+    }
+
+    public function getCurrentUserRole(): ?string
+    {
+        $user = $this->getCurrentUser();
+        if ($user && !empty($this->config['user_roles'][$user])) {
+            return $this->config['user_roles'][$user];
+        }
+        // For API key, assign a default role (optional)
+        return null;
     }
 }

